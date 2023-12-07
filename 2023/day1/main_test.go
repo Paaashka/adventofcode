@@ -2,24 +2,6 @@ package main
 
 import "testing"
 
-func Test_replaceWords(t *testing.T) {
-
-	tests := []struct {
-		in   string
-		want string
-	}{
-		{in: "91cgn9eightzxdzfmj", want: "91cgn98zxdzfmj"},
-		{in: "8hgcs3onemnrcfbgsh9fdc", want: "8hgcs31mnrcfbgsh9fdc"},
-	}
-	for _, tt := range tests {
-		t.Run(tt.in, func(t *testing.T) {
-			if got := ReplaceWords(tt.in); got != tt.want {
-				t.Errorf("ReplaceWords() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
 func Test_fetchNumberFromString(t *testing.T) {
 	tests := []struct {
 		in   string
@@ -36,6 +18,11 @@ func Test_fetchNumberFromString(t *testing.T) {
 		{in: "4nineeightseven2", want: 42},
 		{in: "zoneight234", want: 14},
 		{in: "7pqrstsixteen", want: 76},
+		{in: "tdjkrtrdj7twoneg", want: 71},
+		{in: "9twonexr", want: 91},
+		{in: "9bpzdrrfqcs7eightwob", want: 92},
+		{in: "jnccdbplkfq6oneightd", want: 68},
+		{in: "38oneightg", want: 38},
 	}
 	for _, tt := range tests {
 		t.Run(tt.in, func(t *testing.T) {
