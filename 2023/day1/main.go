@@ -64,7 +64,6 @@ func part1() {
 	f, sc := getScanner()
 	defer f.Close()
 
-	// optionally, resize scanner's capacity for lines over 64K, see next example
 	var row string
 	var result int64
 	for sc.Scan() {
@@ -103,7 +102,6 @@ func part2() {
 	f, sc := getScanner()
 	defer f.Close()
 
-	// optionally, resize scanner's capacity for lines over 64K, see next example
 	var result int64
 	for sc.Scan() {
 		n := fetchNumberFromString(sc.Text())
